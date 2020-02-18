@@ -1,3 +1,5 @@
+import random
+
 deck = []
 suits= [ "♠","♥","♦","♣"]
 for i in range(4):
@@ -20,23 +22,19 @@ print(deck)
 
   #♠♥♦♣
 #Fisher yates shuffle python.
-from random import randint, random
-from math import floor
 
-def fisher_yates_shuffle(the_list):
-    list_range = range(0, len(the_list))
-    for i in list_range:
-        j = randint(list_range[0], list_range[-1])
-        the_list[i], the_list[j] = the_list[j], the_list[i]
-    return the_list
-
-def fisher_yates_shuffle_improved(the_list):
-    amnt_to_shuffle = len(the_list)
-
-    while amnt_to_shuffle > 1:
-        i = int(floor(random() * amnt_to_shuffle))
+def randomize (deck, n): 
     
-        amnt_to_shuffle -= 1
+    
+    for i in range(n-1,0,-1): 
+        
+        j = random.randint(0,i+1) 
+  
+       
+        deck[i],deck[j] = deck[j],deck[i] 
+    return deck 
+  
 
-        the_list[i], the_list[amnt_to_shuffle] = the_list[amnt_to_shuffle], the_list[i]
-    return the_list
+n = len(deck) 
+print(randomize(deck, n)) 
+  
