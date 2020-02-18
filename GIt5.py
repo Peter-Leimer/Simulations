@@ -2,7 +2,7 @@
 
 print("How many times do you want to roll the die")
 
-rollNum = int(input("Enter an int"))
+rollNum = int(input("Enter an int "))
 
 z=0
 count1=0
